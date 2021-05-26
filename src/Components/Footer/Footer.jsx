@@ -1,5 +1,3 @@
-import './footer.css';
-
 import React from 'react';
 import Logo from '../Logo/Logo';
 

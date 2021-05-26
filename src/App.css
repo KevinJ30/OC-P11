@@ -2,3 +2,39 @@ html, body {
     font-family: 'Montserrat', sans-serif;
     font-size:18px;
 }
+
+/**
+ * Composant
+ **/
+
+.logo {
+    text-align: center;
+    width:210px; height:68px;
+}
+
+footer {
+    display:flex;
+    height:209px;
+    flex-direction:column;
+    align-items: center;
+    justify-content: flex-end;
+    background:#000;
+    color:#fff;
+    font-size:1.3em;
+}
+
+footer .logo {
+    width:122px;
+    height:39.44px;
+}
+
+@media screen and (max-width: 375px) {
+    .logo {
+        width:145px; height:47px;
+    }
+
+    footer {
+        justify-content: center;
+        font-size:12px;
+    }
+}
