@@ -30,12 +30,24 @@
 .dropdown__content p:last-child, .dropdown__content h2:last-child { padding-bottom:0; }
 
 .dropdown__content {
-    padding:50px 20px;
     position:relative;
     top: -10px;
+    max-height:0px;
     background:$secondary-color;
     border-radius:10px;
     color:$primary-color;
+    overflow:hidden;
+    transition:all .3s ease-in-out;
+}
+
+.dropdown__content.visible {
+    padding:50px 20px;
+    max-height:max-content;
+}
+
+.dropdown__header button {
+    border:0;
+    background:transparent;
 }
 
 @media screen and (max-width:375px) {

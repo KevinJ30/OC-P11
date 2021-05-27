@@ -14,10 +14,15 @@ export default function Home() {
                 <p>Mon super contenu</p>
             </Dropdown>
 
-            <Dropdown title="Description">
-                <h2>Ma super box</h2>
-                <p>Test de l'application</p>
-                <p>Mon super contenu</p>
+            <Dropdown title="Une autre box pour mon site">
+                <ul>
+                    <li>Climatisation</li>
+                    <li>Wi-Fi</li>
+                    <li>Cuisine</li>
+                    <li>Fer à repasser</li>
+                    <li>Sèche cheveux</li>
+                    <li>Cintres</li>
+                </ul>
             </Dropdown>
 
             <Footer />
