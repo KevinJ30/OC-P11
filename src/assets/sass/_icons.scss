@@ -1,0 +1,16 @@
+.icon {
+    display:inline-block;
+    width:32px; height:32px;
+    vertical-align: middle;
+}
+
+.icon.icon_arrow-up {
+    background:url('../img/arrow_up-down.svg')no-repeat;
+    background-position: center;
+}
+
+.icon.icon_arrow-down {
+    background:url('../img/arrow_up-down.svg')no-repeat;
+    background-position: center;
+    transform:rotateX(180deg);
+}
