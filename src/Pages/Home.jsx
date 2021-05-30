@@ -16,17 +16,10 @@ export default function Home() {
             </Dropdown>
 
             <Dropdown title="Une autre box pour mon site">
-                <ul>
-                    <li>Climatisation</li>
-                    <li>Wi-Fi</li>
-                    <li>Cuisine</li>
-                    <li>Fer à repasser</li>
-                    <li>Sèche cheveux</li>
-                    <li>Cintres</li>
-                </ul>
+                <List elements={[{text: 'ma super liste'}]}/>
             </Dropdown>
 
-            <List elements={[{text: 'ma super liste'}]}/>
+            
 
             <Footer />
         </div>

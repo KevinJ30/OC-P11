@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react"
+import { screen } from "@testing-library/dom"
 import List from './List';
 
 describe('Test Component List', () => {
@@ -49,5 +50,16 @@ describe('Test Component List', () => {
             expect(error).toEqual(true);
         })
     })
+
+    describe("Tests displaying list", () => {
+
+        it('The components should contains 3 elements', () => {
+            const list = [{text: 'My first element'}, {text: "My second element"}, {text: "My third element"}];
+            render(<List elements={list} />);
+            const elements = screen.getAllByRole("listitem");
+            expect(elements.length).toBe(3);
+        });
+
+    });
    
 })
