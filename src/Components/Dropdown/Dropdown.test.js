@@ -1,10 +1,16 @@
-import { render, fireEvent, act } from "@testing-library/react"
+import { render, screen, fireEvent } from "@testing-library/react"
 import Dropdown from './Dropdown';
 
 describe('Test Components Dropdown', () => {
 
     it('should load without error', () => {
-        render(<Dropdown title="My dropdown" />);
+        render(<Dropdown title="My dropdown"></Dropdown>);
+    })
+
+    it('should displaying the content when starting the component', () => {
+        render(<Dropdown title="My dropdown"><p>My first content in the box !</p></Dropdown>);
+        const dropdown_element = document.querySelector('.dropdown');
+        expect(dropdown_element.querySelector('.dropdown__content').classList.contains('visible')).toBe(true);
     })
 
     it('should throw an exception when the component does not contains a property title', () => {
@@ -24,6 +30,7 @@ describe('Test Components Dropdown', () => {
         const buttonElement = document.querySelector('button');
 
         fireEvent.click(buttonElement);
+        fireEvent.click(buttonElement);
 
         const dropdown_element = document.querySelector('.dropdown');
         const dropdownContent = dropdown_element.querySelector('.dropdown__content');
@@ -35,7 +42,6 @@ describe('Test Components Dropdown', () => {
         render(<Dropdown title="My Dropdown"/>)
         const buttonElement = document.querySelector('button');
 
-        fireEvent.click(buttonElement);
         fireEvent.click(buttonElement);
 
         const dropdown_element = document.querySelector('.dropdown');

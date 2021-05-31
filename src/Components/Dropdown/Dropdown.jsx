@@ -18,7 +18,7 @@ class Dropdown extends React.Component {
         this.security(props);
 
         this.children = props.children ? props.children : null;
-        this.state = { visible: false }
+        this.state = { visible: true }
         
         this.bindEvents();
     }
