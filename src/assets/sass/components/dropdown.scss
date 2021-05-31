@@ -44,9 +44,9 @@
     height:auto;
     visibility: visible;
 }
-
+ 
 .dropdown__content-wrapper {
-    padding:50px 20px;
+    padding:40px 20px 27px 20px;
 }
 
 .dropdown__header button {
@@ -57,6 +57,10 @@
 
 .dropdown .icon {
     transition: transform .3s ease-in-out;
+}
+
+.dropdown ul {
+    list-style: none;
 }
 
 @media screen and (max-width:375px) {
