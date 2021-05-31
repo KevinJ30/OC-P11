@@ -16,7 +16,7 @@ export default function Home() {
             </Dropdown>
 
             <Dropdown title="Une autre box pour mon site">
-                <List elements={[{text: 'ma super liste'}]}/>
+                <List elements={[{text: 'Climatisation'}, {text: "Wi-Fi"}, {text: "Cuisine"}]}/>
             </Dropdown>
 
             
