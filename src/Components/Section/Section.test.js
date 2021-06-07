@@ -1,22 +1,3 @@
-/**
- * property :
- *  - img_url : liens vers l'image d'arrière plans
- *  - text : Text à l'intérieure de la section
- * 
- * 
- **/
-
-// Test le comportement au lancement
-
-// Tester que le composant contiens une balise img
-// Tester que l'image contient une scr contenant le chemin de l'image
-
-// Tester le chargement avec les property
-    // sans image
-    // sans text
-    // sans couleur
-    // sans padding
-
 import {render, screen} from '@testing-library/react';
 import Section from './Section';
 
