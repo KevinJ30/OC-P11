@@ -6,11 +6,11 @@ class Rates extends React.Component {
     constructor(props) {
         super(props);
 
-        if(!props.rating === undefined) {
+        if(props.rating === undefined) {
             // eslint-disable-next-line no-throw-literal
             throw('The component does not contain property rating.');
         }
-        console.log(typeof props.rating);
+
         if(typeof props.rating !== 'number') {
             // eslint-disable-next-line no-throw-literal
             throw('The property rating is not number.');
