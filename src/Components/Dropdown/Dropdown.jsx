@@ -1,4 +1,7 @@
 import React from 'react';
+import { IconsArrowDown, IconsArrowUp } from '../../icons/icons';
+
+import './dropdown.scss';
 
 /**
  * class Dropdwon
@@ -51,12 +54,12 @@ class Dropdown extends React.Component {
      * 
      * @returns {string} Nouvelle icone
      **/
-    changeIcon() {
+    displayIcon() {
         if(this.state.visible) {
-            return 'icon icon_arrow-down';
+            return <IconsArrowDown />;
         }
 
-        return 'icon icon_arrow-up';
+        return <IconsArrowUp />;
     }
 
     /**
@@ -92,7 +95,9 @@ class Dropdown extends React.Component {
             return <div className="dropdown">
                     <div className="dropdown__header">
                         <p className="dropdown__header-title">{this.title}</p>
-                        <button onClick={this.onButtonVisible}><span className={this.changeIcon()}></span></button>
+                        <button onClick={this.onButtonVisible}>
+                            { this.displayIcon() }
+                        </button>
                     </div>
 
                     <div className={this.contentClassName()}>
