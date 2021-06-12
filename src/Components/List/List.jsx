@@ -8,14 +8,17 @@ class List extends React.Component {
 
     security(props) {
         if(!props.elements) {
+            // eslint-disable-next-line no-throw-literal
             throw('No list contains elements');
         }
 
         if(typeof props.elements[0] !== 'object') {
+            // eslint-disable-next-line no-throw-literal
             throw('The list does not contain object elements');
         }
 
         if(!props.elements[0].hasOwnProperty('text')) {
+            // eslint-disable-next-line no-throw-literal
             throw('The object in the list doesn\'t contain property text');
         }
 
