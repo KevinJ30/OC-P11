@@ -1,3 +1,18 @@
+$gap-element: 10px;
+
+.tags {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.tags > span { margin-left: $gap-element; }
+
+.tags > span:first-child 
+{ 
+    margin-left: 0; 
+}
+
+
 span.tag {
     padding:5px 22px;
     background:#FF6060;
