@@ -36,7 +36,8 @@ class Dropdown extends React.Component {
             this.title = props.title;
         }
         else {
-            throw "The title property is required (title=\"My title\")";
+            const err = Error("The title property is required (title=\"My title\")")
+            throw err;
         }
     }
 

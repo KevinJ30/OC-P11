@@ -13,7 +13,8 @@ class Tag extends React.Component {
         super(props);
 
         if(props.name === undefined) {
-            throw('The component must contain name property');
+            const err = new Error('The component must contain name property');
+            throw err;
         }
     }
 

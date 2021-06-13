@@ -8,11 +8,13 @@ class TagList extends React.Component {
         super(props);
 
         if(props.list === undefined) {
-            throw('The component doesn\'t contain list property');
+            const err = Error('The component doesn\'t contain list property');
+            throw err;
         }
         
         if(!Array.isArray(props.list)) {
-            throw('The list property doesn\'t array type');
+            const err = Error('The list property doesn\'t array type');
+            throw err;
         }
     }
 

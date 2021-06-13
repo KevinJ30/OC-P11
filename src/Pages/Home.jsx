@@ -9,9 +9,9 @@ import { IconsArrowDown, IconsArrowUp, IconStars } from '../icons/icons';
 import Rates from "../Components/Rates/Rates";
 import Tag from '../Components/Tag/Tag';
 import TagList from '../Components/Tag/TagList';
+import Thumb from '../Components/Thumb/Thumb';
 
 export default function Home() {
-    const text = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed inventore commodi deserunt magnam illum neque aliquid, beatae minus voluptatum eaque est rerum consectetur minima qui amet veritatis esse impedit soluta nisi culpa exercitationem aperiam? Est expedita, ex aliquam reiciendis quae debitis enim ducimus explicabo repellendus eos tenetur minima ratione harum!";
     return(
         <div>
             <Logo />
@@ -35,6 +35,7 @@ export default function Home() {
             <Tag name="tag-name" />
 
             <TagList list={['PHP', 'Laravel', 'JavaScript']} />
+            <Thumb title="Ma super thumb" url_img="http://lorempixel.com/640/480/" />
             <Footer />
         </div>
     );
