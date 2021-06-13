@@ -17,6 +17,7 @@
     background: none;
     border: none;
     cursor: pointer;
+    transform:translateY(-50%);
 }
 
 .carroussel__btn-left .icon-arrow-left, .carroussel__btn-right .icon-arrow-right {
@@ -40,4 +41,40 @@
 
 .icon-arrow-left, .icon-arrow-right {
     color:#fff;
+}
+
+@media screen and(max-width:375px) {
+    .carroussel {
+        height:255px;
+    }
+
+    .carroussel__counter {
+        display:none;
+    }
+
+    .carroussel__btn-left .icon-arrow-left, .carroussel__btn-right .icon-arrow-right {
+        width: 11px; height: 20px;
+    }
+}
+
+/**
+ * Animation
+ **/
+
+.slide-enter {
+    transform: translateX(-100%);
+}
+
+.slide-enter.slide-enter-active {
+    transform: translateX(0);
+    transition: transform .3 ease-in;
+}
+
+.slide-leave {
+    transform: translateX(0);
+}
+
+.slide-enter.slide-enter-active {
+    transform: translateX(100%);
+    transition: transform .3s ease-in;
 }
