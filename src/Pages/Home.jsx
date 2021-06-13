@@ -10,6 +10,7 @@ import Rates from "../Components/Rates/Rates";
 import Tag from '../Components/Tag/Tag';
 import TagList from '../Components/Tag/TagList';
 import Thumb from '../Components/Thumb/Thumb';
+import Carroussel from '../Components/Carroussel/Carroussel';
 
 export default function Home() {
     return(
@@ -36,6 +37,13 @@ export default function Home() {
 
             <TagList list={['PHP', 'Laravel', 'JavaScript']} />
             <Thumb title="Ma super thumb" url_img="http://lorempixel.com/640/480/" />
+
+            {/* <Carroussel>
+                <Carroussel-img url_img="http://lorempixel.com/640/480/" />
+                <Carroussel-img url_img="http://lorempixel.com/640/480/" />
+                <Carroussel-img url_img="http://lorempixel.com/640/480/" />
+            </Carroussel> */}
+
             <Footer />
         </div>
     );
