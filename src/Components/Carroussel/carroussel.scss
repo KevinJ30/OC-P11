@@ -1,0 +1,43 @@
+.carroussel {
+    position: relative;
+    width: 100%;
+    height:415px;
+    color:#fff;
+}
+
+.carroussel img {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.carroussel__btn-left, .carroussel__btn-right {
+    position:absolute;
+    top: 50%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.carroussel__btn-left .icon-arrow-left, .carroussel__btn-right .icon-arrow-right {
+    width: 45px; height: 80px;
+    color:#fff;
+    transition: transform .3s;
+}
+
+.carroussel__btn-left:hover .icon-arrow-left, .carroussel__btn-right:hover .icon-arrow-right {
+    transform: scale(1.1);
+}
+
+.carroussel__btn-left { left:23px; }
+.carroussel__btn-right { right:23px; }
+
+.carroussel__counter {
+    position:absolute;
+    bottom:23px;
+    left: 50%;
+}
+
+.icon-arrow-left, .icon-arrow-right {
+    color:#fff;
+}

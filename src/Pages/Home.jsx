@@ -38,11 +38,11 @@ export default function Home() {
             <TagList list={['PHP', 'Laravel', 'JavaScript']} />
             <Thumb title="Ma super thumb" url_img="http://lorempixel.com/640/480/" />
 
-            {/* <Carroussel>
-                <Carroussel-img url_img="http://lorempixel.com/640/480/" />
-                <Carroussel-img url_img="http://lorempixel.com/640/480/" />
-                <Carroussel-img url_img="http://lorempixel.com/640/480/" />
-            </Carroussel> */}
+            <Carroussel>
+                <img src="https://t1.llb.be/g7DGwaGwXkzfeM33BYU4QAspGRc=/0x0:2560x1280/1920x960/5fc51a7ed8ad585a45ac65cf.jpg" alt="image-1" />
+                <img src="https://france3-regions.francetvinfo.fr/image/W8E4BCpjzMjMvXWVcknZH7EeRsY/600x400/regions/2021/03/04/6040e44895d66_5efb544dd6646_olivier_henrion-4906630-5217654.jpg" alt="image-2" />
+                <img src="http://lorempixel.com/640/480/" alt="image-3" />
+            </Carroussel>
 
             <Footer />
         </div>

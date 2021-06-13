@@ -63,7 +63,7 @@ describe('Test component Carroussel', () => {
            })
 
            it('sould display image-1 when click on the last image', () => {
-                assertEventClick('right', 4);
+                assertEventClick('right', 3);
                 const img = document.querySelector('img');
                 expect(img.alt).toBe('image-1');
            })
