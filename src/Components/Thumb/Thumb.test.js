@@ -20,6 +20,12 @@ describe('Test component Thumb', () => {
             expect(title.innerHTML).toBe('My title'); 
         })
 
+        it('should does not display header (h3) if doesn\'t contain title property', () => {
+            render(<Thumb url_img="http://lorempixel.com/640/480/" />);
+            const title = document.querySelector('.thumb__title');
+            expect(title).toBe(null);
+        })
+
         it('should display image', () => {
             render(<Thumb title="My title" url_img="http://lorempixel.com/640/480/" />);
             const img = document.querySelector('.thumb__img');
@@ -27,7 +33,4 @@ describe('Test component Thumb', () => {
         })
     })
 
-    // it('should display title property if exist', () => {
-    //     render(<Thumb title="My good location" url_img="http://lorempixel.com/640/480/" />);
-    // })
 })
