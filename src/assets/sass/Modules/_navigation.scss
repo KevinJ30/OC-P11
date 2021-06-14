@@ -1,0 +1,32 @@
+nav {
+    display:flex;
+    list-style: none;
+    color:$primary-color;
+    font-size:1.33em;
+}
+
+nav > .nav-item {
+    margin-right:57px; 
+    transition:color .3s;
+}
+
+nav .nav-item.active a { text-decoration: underline; }
+nav .nav-item:hover { color:#f15a5a; }
+
+nav > .nav-item:last-child { margin-right:0; }
+
+nav a {
+    color:inherit;
+    text-decoration:none;
+}
+
+@media screen and(max-width:375px) {
+    nav {
+        font-size:1em;
+        text-transform: uppercase;
+    }
+
+    nav > .nav-item {
+        margin-right:10px;
+    }
+}
