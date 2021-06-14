@@ -13,12 +13,12 @@ import Thumb from '../Components/Thumb/Thumb';
 import Carrousel from '../Components/Carroussel/Carrousel';
 import CarrouselImage from "../Components/Carroussel/CarrouselImage";
 import Vendor from '../Components/Vendor/Vendor';
+import Header from '../Modules/Header';
 
 export default function Home() {
     return(
         <div>
-            <Logo />
-
+            <Header />
             <Dropdown title="Description">
                 <p>Test de l'application</p>
                 <p>Mon super contenu</p>
