@@ -18,7 +18,6 @@ import Header from '../Modules/Header';
 export default function Home() {
     return(
         <div>
-            <Header />
             <Dropdown title="Description">
                 <p>Test de l'application</p>
                 <p>Mon super contenu</p>
@@ -47,8 +46,6 @@ export default function Home() {
                 <CarrouselImage src={"https://france3-regions.francetvinfo.fr/image/W8E4BCpjzMjMvXWVcknZH7EeRsY/600x400/regions/2021/03/04/6040e44895d66_5efb544dd6646_olivier_henrion-4906630-5217654.jpg"} alt={"image-2"} />
                 <CarrouselImage src={"http://lorempixel.com/640/480/"} alt={"image-3"} />
             </Carrousel>
-
-            <Footer />
         </div>
     );
 }    
