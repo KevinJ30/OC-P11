@@ -11,6 +11,7 @@ import Tag from '../Components/Tag/Tag';
 import TagList from '../Components/Tag/TagList';
 import Thumb from '../Components/Thumb/Thumb';
 import Carrousel from '../Components/Carroussel/Carrousel';
+import CarrouselImage from "../Components/Carroussel/CarrouselImage";
 
 export default function Home() {
     return(
@@ -39,9 +40,9 @@ export default function Home() {
             <Thumb title="Ma super thumb" url_img="http://lorempixel.com/640/480/" />
 
             <Carrousel>
-                <img src="https://t1.llb.be/g7DGwaGwXkzfeM33BYU4QAspGRc=/0x0:2560x1280/1920x960/5fc51a7ed8ad585a45ac65cf.jpg" alt="image-1" />
-                <img src="https://france3-regions.francetvinfo.fr/image/W8E4BCpjzMjMvXWVcknZH7EeRsY/600x400/regions/2021/03/04/6040e44895d66_5efb544dd6646_olivier_henrion-4906630-5217654.jpg" alt="image-2" />
-                <img src="http://lorempixel.com/640/480/" alt="image-3" />
+                <CarrouselImage src={"https://t1.llb.be/g7DGwaGwXkzfeM33BYU4QAspGRc=/0x0:2560x1280/1920x960/5fc51a7ed8ad585a45ac65cf.jpg"} alt={"image-1"} />
+                <CarrouselImage src={"https://france3-regions.francetvinfo.fr/image/W8E4BCpjzMjMvXWVcknZH7EeRsY/600x400/regions/2021/03/04/6040e44895d66_5efb544dd6646_olivier_henrion-4906630-5217654.jpg"} alt={"image-2"} />
+                <CarrouselImage src={"http://lorempixel.com/640/480/"} alt={"image-3"} />
             </Carrousel>
 
             <Footer />

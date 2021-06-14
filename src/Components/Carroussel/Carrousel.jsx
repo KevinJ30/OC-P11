@@ -1,47 +1,76 @@
 import React from 'react';
-import { IconArrowLeft, IconArrowRight } from '../../icons/icons';
 import './carrousel.scss';
+
+const LEFT = 0;
+const RIGHT = 1;
 
 class Carrousel extends React.Component {
     constructor(props) {
         super(props);
 
+        this.sliderRef = React.createRef();
+
         this.state = {
             selected: 1,
-            animated: false
+            direction: null
         }
 
         this.handleRight = this.handleRight.bind(this);
         this.handleLeft = this.handleLeft.bind(this);
     }
 
+    componentDidUpdate() {
+        const image_width = this.sliderRef.current.children[0].clientWidth;
+        const position_x = image_width * (this.state.selected - 1);
+        this.sliderRef.current.style.transform = "translateX(-" + position_x + "px)";
+    }
+
     handleRight() {
-        const selected = this.state.selected >= this.props.children.length ? 1 : this.state.selected + 1;
         this.setState({
-            selected: selected,
-            animated: true
+            selected: this.state.selected >= this.props.children.length ? 1 : this.state.selected + 1,
+            direction: RIGHT
         });
     }
 
     handleLeft() {
-        const selected = this.state.selected <= 1 ? this.props.children.length : this.state.selected - 1;
         this.setState({
-            selected: selected,
-            animated: true
+            selected: this.state.selected <= 1 ? this.props.children.length : this.state.selected - 1,
+            direction: LEFT
         });
     }
 
     render() { 
         return (
             <div className="carrousel">
-                <button className="carrousel__btn-left" onClick={this.handleLeft}><IconArrowLeft /></button>
+                <div ref={this.sliderRef} className="carrousel__slider">
+                    {this.props.children}
+                </div>
 
-                {this.props.children[this.state.selected - 1]}
+                <div className="carrousel__counter">
+                    {this.state.selected}/{this.props.children.length}
+                </div>
 
-                <button className="carrousel__btn-right" onClick={this.handleRight}><IconArrowRight /></button>
-                <span className="carrousel__counter">
-                    {this.state.selected}/{this.props.children.length}        
-                </span>
+                <div className="carrousel__actions">
+                    <button className="carrousel__btn carrousel__btn-left" onClick={this.handleLeft}>
+                        <span className="icon">
+                            <svg viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M47.04 7.78312L39.92 0.703125L0.359985 40.3031L39.96 79.9031L47.04 72.8231L14.52 40.3031L47.04 7.78312Z"
+                                    fill="currentColor"/>
+                            </svg>
+                        </span>
+                    </button>
+
+                    <button className="carrousel__btn carrousel__btn-right" onClick={this.handleRight}>
+                        <span className="icon">
+                            <svg viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.960022 72.3458L8.04002 79.4258L47.64 39.8258L8.04002 0.22583L0.960022 7.30583L33.48 39.8258L0.960022 72.3458Z"
+                                    fill="currentColor"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
             </div>
         );
     }
