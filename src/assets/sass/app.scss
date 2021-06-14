@@ -1,3 +1,4 @@
+@import './utils.scss';
 @import './vars.scss';
 @import './general.scss';
 @import './icons.scss';
@@ -13,3 +14,8 @@
 
 @import './/Modules/header.scss';
 @import './Modules/navigation.scss';
+
+/**
+ * Partials
+ **/
+@import './partials/notFound.scss';

@@ -1,0 +1,25 @@
+.page_not_found { 
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    color:$primary-color;
+}
+.page_not_found__title {
+    margin: 0; padding: 0;
+    color:$primary-color;
+    font-size:16em;
+    font-weight:700;
+    line-height:410px;
+}
+
+.page_not_found__text {
+    margin-top:66px;
+    margin-bottom:0;
+    font-size:2em;
+}
+
+.page_not_found__link {
+    margin-top:182px;
+    color:inherit;
+}
