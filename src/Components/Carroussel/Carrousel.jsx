@@ -1,14 +1,14 @@
 import React from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { IconArrowLeft, IconArrowRight } from '../../icons/icons';
-import './carroussel.scss';
+import './carrousel.scss';
 
-class Carroussel extends React.Component {
+class Carrousel extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            selected: 1
+            selected: 1,
+            animated: false
         }
 
         this.handleRight = this.handleRight.bind(this);
@@ -17,23 +17,29 @@ class Carroussel extends React.Component {
 
     handleRight() {
         const selected = this.state.selected >= this.props.children.length ? 1 : this.state.selected + 1;
-        this.setState({selected: selected});
+        this.setState({
+            selected: selected,
+            animated: true
+        });
     }
 
     handleLeft() {
         const selected = this.state.selected <= 1 ? this.props.children.length : this.state.selected - 1;
-        this.setState({selected: selected});
+        this.setState({
+            selected: selected,
+            animated: true
+        });
     }
 
     render() { 
         return (
-            <div className="carroussel">
-                <button className="carroussel__btn-left" onClick={this.handleLeft}><IconArrowLeft /></button>
-                
-                {this.props.children[this.state.selected - 1]}               
-                
-                <button className="carroussel__btn-right" onClick={this.handleRight}><IconArrowRight /></button>
-                <span className="carroussel__counter">
+            <div className="carrousel">
+                <button className="carrousel__btn-left" onClick={this.handleLeft}><IconArrowLeft /></button>
+
+                {this.props.children[this.state.selected - 1]}
+
+                <button className="carrousel__btn-right" onClick={this.handleRight}><IconArrowRight /></button>
+                <span className="carrousel__counter">
                     {this.state.selected}/{this.props.children.length}        
                 </span>
             </div>
@@ -41,4 +47,4 @@ class Carroussel extends React.Component {
     }
 }
  
-export default Carroussel;
+export default Carrousel;

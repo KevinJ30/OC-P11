@@ -1,11 +1,11 @@
 import {fireEvent, render} from '@testing-library/react';
-import Carroussel from './Carroussel';
+import Carrousel from './Carrousel';
 
-const component = <Carroussel>
+const component = <Carrousel>
                     <img src="image-1" alt="image-1" />
                     <img src="image-2" alt="image-2" />
                     <img src="image-3" alt="image-3" />
-                  </Carroussel>;
+                  </Carrousel>;
 /**
  * Rend le composant et click sur le bouton passé en parametre
  * 
@@ -14,14 +14,14 @@ const component = <Carroussel>
  **/
 function assertEventClick(buttonName, numberClick = 1) {
     render(component)
-    const button = document.querySelector('.carroussel__btn-' + buttonName);
+    const button = document.querySelector('.carrousel__btn-' + buttonName);
     
     for(let i = 0; i < numberClick; i++) {
         fireEvent.click(button);
     }
 }
 
-describe('Test component Carroussel', () => {
+describe('Test component Carrousel', () => {
 
     it('should load without error', () => {
         render(component);
@@ -30,13 +30,13 @@ describe('Test component Carroussel', () => {
     describe('Display component', () =>  {
         it('should contain the counter element', () => {
             render(component);
-            const counter_element = document.querySelector('.carroussel__counter');
+            const counter_element = document.querySelector('.carrousel__counter');
             expect(counter_element).not.toBe(null);
         })
 
         it('when load component the counter should display 1/3', () => {
             render(component);
-            const counter_element = document.querySelector('.carroussel__counter');
+            const counter_element = document.querySelector('.carrousel__counter');
             expect(counter_element.innerHTML).toBe('1/3');
         })
 
@@ -58,11 +58,11 @@ describe('Test component Carroussel', () => {
 
            it('should change number image selected on the counter', () => {
                 assertEventClick('right');
-                const counter_element = document.querySelector('.carroussel__counter');
+                const counter_element = document.querySelector('.carrousel__counter');
                 expect(counter_element.innerHTML).toBe('2/3');
            })
 
-           it('sould display image-1 when click on the last image', () => {
+           it('should display image-1 when click on the last image', () => {
                 assertEventClick('right', 3);
                 const img = document.querySelector('img');
                 expect(img.alt).toBe('image-1');
@@ -80,11 +80,11 @@ describe('Test component Carroussel', () => {
         it('should change number image selected on the counter', () => {
             assertEventClick('right', 2); 
             assertEventClick('left');
-            const counter_element = document.querySelector('.carroussel__counter');
+            const counter_element = document.querySelector('.carrousel__counter');
             expect(counter_element.innerHTML).toBe('2/3');
         })
 
-        it('sould display image-1 when click on the last image', () => {
+        it('should display image-1 when click on the last image', () => {
              assertEventClick('left');
              const img = document.querySelector('img');
              expect(img.alt).toBe('image-3');

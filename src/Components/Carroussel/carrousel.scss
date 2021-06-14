@@ -62,19 +62,16 @@
  **/
 
 .slide-enter {
-    transform: translateX(-100%);
+    opacity: 0;
 }
-
-.slide-enter.slide-enter-active {
-    transform: translateX(0);
-    transition: transform .3 ease-in;
+.slide-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
 }
-
-.slide-leave {
-    transform: translateX(0);
+.slide-exit {
+    opacity: 1;
 }
-
-.slide-enter.slide-enter-active {
-    transform: translateX(100%);
-    transition: transform .3s ease-in;
+.slide-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
 }
