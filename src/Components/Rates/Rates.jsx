@@ -1,19 +1,21 @@
 import React from 'react';
 import {IconStars} from "../../icons/icons";
 
+import './rates.scss';
+
 class Rates extends React.Component {
 
     constructor(props) {
         super(props);
 
         if(props.rating === undefined) {
-            // eslint-disable-next-line no-throw-literal
-            throw('The component does not contain property rating.');
+            const err = 'The component does not contain property rating.'; 
+            throw err;
         }
 
         if(typeof props.rating !== 'number') {
-            // eslint-disable-next-line no-throw-literal
-            throw('The property rating is not number.');
+            const err = 'The property rating is not number.'; 
+            throw err;
         }
 
         // On créer un tableaux conetnant les étaoiles

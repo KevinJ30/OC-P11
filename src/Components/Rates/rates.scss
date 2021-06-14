@@ -1,0 +1,9 @@
+.rates .icon {
+    width:30px; height:30px;
+}
+
+@media screen and(max-width:375px) {
+    .rates .icon {
+        width:15px; height:15px;
+    }    
+}
