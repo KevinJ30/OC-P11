@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Navigation extends React.Component {
     constructor(props) {
@@ -8,8 +9,8 @@ class Navigation extends React.Component {
     render() { 
         return (
             <nav className="nav">
-                <li className="nav-item"><a href="#">Home</a></li>
-                <li className="nav-item"><a href="#">A propos</a></li>
+                <Link to="/" className="nav-item">Home</Link>
+                <Link to="/about" className="nav-item">A propos</Link>
             </nav>
         );
     }

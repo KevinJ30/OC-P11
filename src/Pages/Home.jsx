@@ -18,7 +18,6 @@ import Header from '../Modules/Header';
 export default function Home() {
     return(
         <div>
-            <Header />
             <Dropdown title="Description">
                 <p>Test de l'application</p>
                 <p>Mon super contenu</p>
