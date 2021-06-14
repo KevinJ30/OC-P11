@@ -12,13 +12,17 @@ const component = <Carrousel>
  * @param {string} buttonName Nom du bouton
  * @param {number} numberClick Nombre de clique 
  **/
-function assertEventClick(buttonName, numberClick = 1) {
-    render(component)
+function eventClick(buttonName, numberClick = 1) {
     const button = document.querySelector('.carrousel__btn-' + buttonName);
     
     for(let i = 0; i < numberClick; i++) {
         fireEvent.click(button);
     }
+}
+
+const assertCounter = (value) => {
+    const counter_element = document.querySelector('.carrousel__counter');
+    expect(counter_element.innerHTML).toBe(value);
 }
 
 describe('Test component Carrousel', () => {
@@ -36,14 +40,7 @@ describe('Test component Carrousel', () => {
 
         it('when load component the counter should display 1/3', () => {
             render(component);
-            const counter_element = document.querySelector('.carrousel__counter');
-            expect(counter_element.innerHTML).toBe('1/3');
-        })
-
-        it('when load should display first children', () => {
-            render(component)
-            const img_element = document.querySelector('img');
-            expect(img_element.alt).toBe('image-1');
+            assertCounter('1/3');
         })
     })
 
@@ -51,44 +48,55 @@ describe('Test component Carrousel', () => {
 
        describe('When click right button', () => {
            it('should selected next image', () => {
-                assertEventClick('right');
-                const img_element = document.querySelector('img');
-                expect(img_element.alt).toBe('image-2');
-           })
-
-           it('should change number image selected on the counter', () => {
-                assertEventClick('right');
-                const counter_element = document.querySelector('.carrousel__counter');
-                expect(counter_element.innerHTML).toBe('2/3');
+                render(component);
+                eventClick('right');
+                assertCounter('2/3');
            })
 
            it('should display image-1 when click on the last image', () => {
-                assertEventClick('right', 3);
-                const img = document.querySelector('img');
-                expect(img.alt).toBe('image-1');
+                render(component);
+                eventClick('right', 3);
+                assertCounter('1/3');
            })
        })
         
        describe('When click left button', () => {
-        it('should selected prevent image', () => {
-            assertEventClick('right', 2);
-            assertEventClick('left');
-            const img_element = document.querySelector('img');
-            expect(img_element.alt).toBe('image-2');
-        })
+            it('should selected prevent image', () => {
+                render(component);
+                eventClick('right', 2);
+                eventClick('left');
+                assertCounter('2/3');
+            })
 
-        it('should change number image selected on the counter', () => {
-            assertEventClick('right', 2); 
-            assertEventClick('left');
-            const counter_element = document.querySelector('.carrousel__counter');
-            expect(counter_element.innerHTML).toBe('2/3');
-        })
+            it('should change number image selected on the counter', () => {
+                render(component);
+                eventClick('right', 2); 
+                eventClick('left');
+                assertCounter('2/3')
+            })
 
-        it('should display image-1 when click on the last image', () => {
-             assertEventClick('left');
-             const img = document.querySelector('img');
-             expect(img.alt).toBe('image-3');
+            it('should display image-1 when click on the last image', () => {
+                render(component);
+                eventClick('left');
+                assertCounter('3/3');
+            })
+            
+            it('should display next image when right key pressed', () => {
+                render(component);
+                const carrousel = document.querySelector('.carrousel');
+                fireEvent.keyUp(carrousel, {key: 'ArrowRight'});
+
+                assertCounter('2/3');
+            })
+
+            it('should display next image when right key pressed', () => {
+                render(component);
+                const carrousel = document.querySelector('.carrousel');
+                fireEvent.keyUp(carrousel, {key: 'ArrowRight'});
+                fireEvent.keyUp(carrousel, {key: 'ArrowLeft'});
+
+                assertCounter('1/3');
+            })
         })
-    })
     })
 })

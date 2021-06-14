@@ -9,14 +9,15 @@
     margin: 0; padding: 0;
     position:relative;
     width:500%;
+    height:100%;
     text-align: left;
     transition:transform .3s ease-in-out;
 }
 
 .carrousel__slider img {
     width:20%;
+    height:100%;
     float:left;
-    height:415px;
     object-fit: cover;
 }
 
@@ -34,10 +35,11 @@
     background:transparent;
     border: none;
     transition: transform .3s;
+    cursor:pointer;
 }
 
 .carrousel__btn:hover {
-    transform:scale(1.1);
+    transform:scale(1.15);
 }
 
 .carrousel__actions span.icon {
@@ -46,10 +48,7 @@
 
 .carrousel__content img {
     width:20%;
-}
-
-.carrousel__container {
-    transform: translateX(0);
+    height:100%;
 }
 
 .carrousel__counter {
@@ -59,4 +58,14 @@
     bottom: 0; left: 0;
     color:#fff;
     text-align: center;
+}
+
+@media screen and(max-width:375px) {
+    .carrousel {
+        height:255px;
+    }
+
+    .carrousel__counter {
+        display:none;
+    }
 }

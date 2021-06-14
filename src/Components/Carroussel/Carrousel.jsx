@@ -1,10 +1,21 @@
 import React from 'react';
 import './carrousel.scss';
 
+/**
+ *  @const LEFT direction de l'animation
+ *  @const RIGHT direction de l'animation
+ **/
 const LEFT = 0;
 const RIGHT = 1;
 
+/**
+ * Composant carrousel
+ * -------------------
+ * 
+ * Créé par Joudrier Kevin
+ **/
 class Carrousel extends React.Component {
+
     constructor(props) {
         super(props);
 
@@ -17,31 +28,72 @@ class Carrousel extends React.Component {
 
         this.handleRight = this.handleRight.bind(this);
         this.handleLeft = this.handleLeft.bind(this);
+        this.handleKeyUp = this.handleKeyUp.bind(this);
     }
 
+    /**
+     * Mise à jour de la position du slider au changement d'élément séléctionné
+     **/
     componentDidUpdate() {
         const image_width = this.sliderRef.current.children[0].clientWidth;
         const position_x = image_width * (this.state.selected - 1);
         this.sliderRef.current.style.transform = "translateX(-" + position_x + "px)";
     }
 
-    handleRight() {
+    /**
+     * Évenement du bouton droit
+     * 
+     * @param {Event} event
+     **/
+    handleRight(event) {
+        event.preventDefault();
+
         this.setState({
             selected: this.state.selected >= this.props.children.length ? 1 : this.state.selected + 1,
             direction: RIGHT
         });
     }
 
-    handleLeft() {
+    /**
+     * Évenement du bouton gauche
+     * 
+     * @param {Event} event
+     **/
+    handleLeft(event) {
+        event.preventDefault();
+        
         this.setState({
             selected: this.state.selected <= 1 ? this.props.children.length : this.state.selected - 1,
             direction: LEFT
         });
     }
 
+    /**
+     * Évenement du clavier
+     * 
+     * @param {Event} event 
+     **/
+    handleKeyUp(event) {
+        switch(event.key) {
+            case "ArrowRight":
+                this.setState({
+                    selected: this.state.selected >= this.props.children.length ? 1 : this.state.selected + 1,
+                    direction: RIGHT
+                });
+                break;
+
+            case "ArrowLeft":
+                this.setState({
+                    selected: this.state.selected <= 1 ? this.props.children.length : this.state.selected - 1,
+                    direction: LEFT
+                });
+                break;
+        }
+    }
+
     render() { 
         return (
-            <div className="carrousel">
+            <div onKeyUp={this.handleKeyUp} className="carrousel">
                 <div ref={this.sliderRef} className="carrousel__slider">
                     {this.props.children}
                 </div>
