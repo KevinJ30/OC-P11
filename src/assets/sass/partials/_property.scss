@@ -1,0 +1,41 @@
+.property__carrousel {
+    margin-top: space(3, 8);
+}
+
+.property__location {
+    margin: 0;
+    margin-top:space(1, 8);
+    font-weight:500;
+}
+
+.property__tags {
+    display:flex;
+    margin-top: space(3, 8);
+}
+
+.property__tags .tag {
+    padding: 0 22px;
+    height:25px;
+}
+
+.property__tags > * {
+    margin-right:10px;
+}
+
+.property__tags > *:last-child {
+    margin-right:0;
+}
+
+.property__informations {
+    margin-top: space(3, 8);
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:76px;
+}
+
+@media screen and(max-width:600px) {
+    .property__informations {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:space(2, 8);
+    }
+}
