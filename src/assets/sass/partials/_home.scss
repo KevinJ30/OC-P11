@@ -1,0 +1,12 @@
+.home .section {
+    margin-top: space(9, 8);
+}
+.home__gallery {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:60px;
+    margin-top: space(5, 8);
+    padding:56px 50px;
+    background:#F7F7F7;
+    border-radius:25px;
+}
