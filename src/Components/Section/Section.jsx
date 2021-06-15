@@ -38,9 +38,8 @@ class Section extends React.Component {
     render() { 
         return (  
             <div data-testid="background" className="section" style={this.style()}>
-                { this.displayImage() }
-
                 { this.displayText() }
+                { this.displayImage() }
             </div>
         );
     }

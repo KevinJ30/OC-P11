@@ -1,0 +1,41 @@
+.home .section {
+    margin-top: space(9, 8);
+}
+
+.home__gallery {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:60px;
+    margin-top: space(5, 8);
+    padding:56px 50px;
+    background:#F7F7F7;
+    border-radius:25px;
+}
+
+.home__loading_data {
+    display:block;
+    width: 100%;
+    color: $primary-color;
+    text-align:center;
+    font-size:1.5em;
+    grid-column: 1/4;
+}
+
+@media screen and(max-width:1260px) {
+    .home__gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and(max-width:850px) {
+    .home__gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and(max-width:375px) {
+    .home__gallery {
+        padding: 0;
+        background: transparent;
+    }
+} 

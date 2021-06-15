@@ -1,51 +1,48 @@
 import React from 'react';
-import Logo from '../Components/Logo/Logo'
-import Dropdown from '../Components/Dropdown/Dropdown'
-import Footer from '../Components/Footer/Footer';
-import List from '../Components/List/List';
 import Section from '../Components/Section/Section';
-
-import { IconsArrowDown, IconsArrowUp, IconStars } from '../icons/icons';
-import Rates from "../Components/Rates/Rates";
-import Tag from '../Components/Tag/Tag';
-import TagList from '../Components/Tag/TagList';
 import Thumb from '../Components/Thumb/Thumb';
-import Carrousel from '../Components/Carroussel/Carrousel';
-import CarrouselImage from "../Components/Carroussel/CarrouselImage";
-import Vendor from '../Components/Vendor/Vendor';
-import Header from '../Modules/Header';
 
-export default function Home() {
-    return(
-        <div>
-            <Dropdown title="Description">
-                <p>Test de l'application</p>
-                <p>Mon super contenu</p>
-            </Dropdown>
+class Home extends React.Component {
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            dataIsLoaded: false,
+            data: []
+        }
+    }
 
-            <Dropdown title="Une autre box pour mon site">
-                <List elements={[{text: 'Climatisation'}, {text: "Wi-Fi"}, {text: "Cuisine"}]}/>
-            </Dropdown>
+    // Chargement des données depuis un fichier JSON
+    componentDidMount() {
+        fetch('/logements.json')
+            .then(response => response.json())
+            .then((data) => {
+                
+                this.setState({
+                    dataIsLoaded: true,
+                    data: data
+                });
 
-            <Section color="#000" text="Mon super text" padding="10px 10px"/>
+            });
+    }
+    
+    render() { 
+        return <div className="home">
+            <Section src="/medias/image_section.jpg" text="Chez vous, partout et ailleurs" />
 
+            <section className="home__gallery">
+                {
+                    !this.state.dataIsLoaded && 
+                    <span className="home__loading_data">Chargement en cours...</span>
+                }
 
-            <IconStars />
-            <IconsArrowDown />
-            <IconsArrowUp />
-            <Rates rating={2} />
-            <Tag name="tag-name" />
-
-            <TagList list={['PHP', 'Laravel', 'JavaScript']} />
-            <Thumb title="Ma super thumb" url_img="http://lorempixel.com/640/480/" />
-            
-            <Vendor firstname="Joudrier" lastname="Kevin" avatar_url="http://lorempixel.com/640/480/" rating={2.5} />
-            
-            <Carrousel>
-                <CarrouselImage src={"https://t1.llb.be/g7DGwaGwXkzfeM33BYU4QAspGRc=/0x0:2560x1280/1920x960/5fc51a7ed8ad585a45ac65cf.jpg"} alt={"image-1"} />
-                <CarrouselImage src={"https://france3-regions.francetvinfo.fr/image/W8E4BCpjzMjMvXWVcknZH7EeRsY/600x400/regions/2021/03/04/6040e44895d66_5efb544dd6646_olivier_henrion-4906630-5217654.jpg"} alt={"image-2"} />
-                <CarrouselImage src={"http://lorempixel.com/640/480/"} alt={"image-3"} />
-            </Carrousel>
-        </div>
-    );
-}    
+                {
+                    this.state.dataIsLoaded && 
+                    this.state.data.map(property => <Thumb title={property.title} url_img={property.cover} />)
+                }
+            </section>
+        </div>;
+    }
+}
+ 
+export default Home;
