@@ -15,8 +15,8 @@ html, body {
 
 .container {
     margin:0 auto;
-    margin-top:40px;
-    width:86%;
+    padding-top: 40px;
+    width:86%; height:100vh;
 }
 
 @media screen and(max-width:375px) {

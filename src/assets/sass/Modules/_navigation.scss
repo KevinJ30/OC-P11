@@ -20,6 +20,15 @@ nav a {
     text-decoration:none;
 }
 
+@media screen and(max-width: 495px) {
+    nav {
+        font-size: 1.2em;
+    }
+    nav > .nav-item {
+        margin-right: 20px;
+    }
+}
+
 @media screen and(max-width:375px) {
     nav {
         font-size:1em;
