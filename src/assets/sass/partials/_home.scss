@@ -1,6 +1,7 @@
 .home .section {
     margin-top: space(9, 8);
 }
+
 .home__gallery {
     display:grid;
     grid-template-columns: repeat(3, 1fr);
@@ -9,4 +10,13 @@
     padding:56px 50px;
     background:#F7F7F7;
     border-radius:25px;
+}
+
+.home__loading_data {
+    display:block;
+    width: 100%;
+    color: $primary-color;
+    text-align:center;
+    font-size:1.5em;
+    grid-column: 1/4;
 }
