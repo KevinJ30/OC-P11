@@ -5,6 +5,7 @@ import CarrouselImage from '../Components/Carroussel/CarrouselImage';
 import Tag from '../Components/Tag/Tag';
 import Dropdown from '../Components/Dropdown/Dropdown';
 import List from '../Components/List/List';
+import Vendor from '../Components/Vendor/Vendor';
 
 class Property extends React.Component {
     constructor(props) {
@@ -30,8 +31,8 @@ class Property extends React.Component {
 
     render() { 
         if(this.state.dataIsLoaded) {
+            const fullname = this.state.data.host.name.split(' ');
             let list_equipements = [];
-
             this.state.data.equipments.forEach(item => {
                 list_equipements.push({text: item});
             })
@@ -45,12 +46,18 @@ class Property extends React.Component {
                     </div>
     
                     <div className="property__header">
-                        <h1 className="property_title">{this.state.data.title}</h1>
-                        <p className="property__location">{this.state.data.location}</p>
-                    </div>
-    
-                    <div className="property__tags">
-                        {this.state.data.tags.map(tag => <Tag name={tag} />)}
+                        <div className="property__title">
+                            <h1>{this.state.data.title}</h1>
+                            <p>{this.state.data.location}</p>
+                           
+                            <div className="property__tags">
+                                {this.state.data.tags.map(tag => <Tag name={tag} />)}
+                            </div>
+                        </div>
+
+                        <div className="property__vendor">
+                            <Vendor firstname={fullname[0]} lastname={fullname[1]} avatar_url={this.state.data.host.picture} rating={parseInt(this.state.data.rating)} />                        
+                        </div>
                     </div>
     
                     <div className="property__informations">
