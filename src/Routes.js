@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
+import About from './Pages/About';
 import Home from './Pages/Home';
 import PageNotFound from './Pages/PageNotFound';
 import Property from './Pages/Property';
@@ -11,9 +12,7 @@ export default function Routes() {
             
             <Route path="/property/:id" component={Property} />
 
-            <Route path="/about">
-                <h1>Ma super page</h1>
-            </Route>
+            <Route path="/about" component={About} />
             
             <Route path="*" component={PageNotFound} />
 
