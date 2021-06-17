@@ -2,7 +2,7 @@
 @import './vars.scss';
 @import './general.scss';
 @import './icons.scss';
-
+@import './typo.scss';
 
 /**
  * Composants
@@ -18,5 +18,6 @@
 /**
  * Partials
  **/
-@import './partials/notFound.scss';
 @import './partials/home.scss';
+@import './partials/property';
+@import './partials/notFound.scss';

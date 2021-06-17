@@ -42,7 +42,7 @@ class Vendor extends React.Component {
                 </div>
 
                 <div className="vendor__rates">
-                    <Rates rating={2} />
+                    <Rates rating={this.props.rating} />
                 </div>
             </div>
         );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Section from '../Components/Section/Section';
 import Thumb from '../Components/Thumb/Thumb';
 
@@ -38,7 +39,11 @@ class Home extends React.Component {
 
                 {
                     this.state.dataIsLoaded && 
-                    this.state.data.map(property => <Thumb title={property.title} url_img={property.cover} />)
+                    this.state.data.map(property => 
+                        <React.Fragment key={property.id}>
+                            <Link to={"/property/" + property.id} className="home__thumb"><Thumb title={property.title} url_img={property.cover} /></Link>
+                        </React.Fragment>
+                    )
                 }
             </section>
         </div>;
