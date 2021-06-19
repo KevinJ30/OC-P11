@@ -37,6 +37,7 @@ class Carrousel extends React.Component {
     componentDidUpdate() {
         const image_width = this.sliderRef.current.children[0].clientWidth;
         const position_x = image_width * (this.state.selected - 1);
+
         this.sliderRef.current.style.transform = "translateX(-" + position_x + "px)";
     }
 

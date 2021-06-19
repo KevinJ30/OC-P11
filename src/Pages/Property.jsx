@@ -41,7 +41,9 @@ class Property extends React.Component {
                 <React.Fragment>
                     <div className="property__carrousel">
                         <Carrousel>
-                            {this.state.data.pictures.map((picture, i) => <CarrouselImage key={i} src={picture} alt={i} /> )}
+                            {this.state.data.pictures.map((picture, i) => {
+                                return <CarrouselImage key={i} src={picture} alt={i} />
+                            } )}
                         </Carrousel>
                     </div>
     

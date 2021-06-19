@@ -6,19 +6,17 @@
 }
 
 .carrousel__slider {
-    margin: 0; padding: 0;
     position:relative;
-    width:500%;
+    margin: 0; padding: 0;
+    display:flex;
     height:100%;
-    text-align: left;
     transition:transform .3s ease-in-out;
 }
 
 .carrousel__slider img {
-    width:20%;
-    height:100%;
-    float:left;
-    object-fit: cover;
+    width:100%;
+    flex: 0 0 100%;
+    object-fit:cover;
 }
 
 .carrousel__actions {
