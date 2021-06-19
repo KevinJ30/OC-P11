@@ -10,7 +10,7 @@ nav > .nav-item {
     transition:color .3s;
 }
 
-nav .nav-item.active a { text-decoration: underline; }
+nav .nav-item.active { text-decoration: underline; }
 nav .nav-item:hover { color:#f15a5a; }
 
 nav > .nav-item:last-child { margin-right:0; }

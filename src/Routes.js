@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Route, Switch } from 'react-router';
 import About from './Pages/About';
 import Home from './Pages/Home';
