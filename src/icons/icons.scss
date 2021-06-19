@@ -1,0 +1,23 @@
+$icon-size: 30px;
+$icon-size-mobile: 18px;
+
+.icon {
+    width: $icon-size; height:$icon-size;
+    color:#000;
+}
+
+.icon-arrow-down {
+    transform:rotateX(180deg);
+}
+
+.icon-stars {
+    color: #E3E3E3;
+}
+
+.icon-stars.active {
+    color:#FF6060;
+}
+
+@media screen and(max-width:375px) {
+    .icon { width: $icon-size-mobile; height:$icon-size-mobile }
+}

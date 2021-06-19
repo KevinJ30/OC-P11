@@ -1,0 +1,23 @@
+@mixin container {
+    margin:auto;
+    width:1240px;
+}
+
+@function space($number_space, $size_space) {
+    @return $size_space * $number_space + px;
+}
+
+
+@function pow($base, $exponent) {
+    $result: 1;
+    @for $_ from 1 through $exponent {
+      $result: $result * $base;
+    }
+    @return $result;
+}
+
+@mixin down($size) {
+  @media (max-width: $size + 'px') {
+    @content;
+  }
+}  
