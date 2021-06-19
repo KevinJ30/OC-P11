@@ -14,5 +14,10 @@
       $result: $result * $base;
     }
     @return $result;
+}
+
+@mixin down($size) {
+  @media (max-width: $size + 'px') {
+    @content;
   }
-  
+}  

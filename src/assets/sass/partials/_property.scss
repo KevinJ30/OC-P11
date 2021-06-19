@@ -36,6 +36,7 @@
 .property__tags {
     margin-top: space(2, 8);
     display:flex;
+    flex-wrap: wrap;
 }
 
 .property__tags > * {
@@ -51,24 +52,32 @@
     display:grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap:76px;
+
+    @include down(900) {
+        grid-gap:24px;
+    }
 }
 
-@media screen and(max-width:1050px) {
+@media screen and(max-width:600px) {
     .property__header {
         grid-template-columns: repeat(1, 1fr);
     }
 
     .property__vendor {
+        width: 100%;
         margin-top: space(3.75, 8);
         justify-self: start;
     }
 
+    .property__vendor .vendor {
+        flex-direction: row;
+    }
+
     .property__vendor .vendor__informations {
         justify-content: flex-start;
+        order:1;
     }
-}
-
-@media screen and(max-width:600px) {
+    
     .property__informations {
         grid-template-columns: repeat(1, 1fr);
         grid-gap:space(2, 8);

@@ -16,9 +16,13 @@ html, body {
     margin:0 auto;
     padding-top: 40px;
     width:86%;
+
+    @include down(600) {
+        width:89.3%;
+    }
 }
 
-@media screen and(max-width:375px) {
+@include down(375) {
     html, body {
         font-size:12px;
         line-height:17px;
