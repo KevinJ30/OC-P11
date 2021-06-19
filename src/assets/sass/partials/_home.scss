@@ -25,21 +25,21 @@
     grid-column: 1/4;
 }
 
-@media screen and(max-width:1260px) {
+@include down(1260) {
     .home__gallery {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and(max-width:850px) {
+@include down(850) {
     .home__gallery {
         grid-template-columns: repeat(1, 1fr);
     }
 }
 
-@media screen and(max-width:375px) {
+@include down(600) {
     .home__gallery {
         padding: 0;
         background: transparent;
     }
-} 
+}
