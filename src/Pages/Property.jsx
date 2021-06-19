@@ -41,7 +41,7 @@ class Property extends React.Component {
                 <React.Fragment>
                     <div className="property__carrousel">
                         <Carrousel>
-                            {this.state.data.pictures.map((picture, i) => <CarrouselImage src={picture} alt={i} /> )}
+                            {this.state.data.pictures.map((picture, i) => <CarrouselImage key={i} src={picture} alt={i} /> )}
                         </Carrousel>
                     </div>
     
@@ -51,7 +51,7 @@ class Property extends React.Component {
                             <p>{this.state.data.location}</p>
                            
                             <div className="property__tags">
-                                {this.state.data.tags.map(tag => <Tag name={tag} />)}
+                                {this.state.data.tags.map((tag, i) => <Tag key={i} name={tag} />)}
                             </div>
                         </div>
 

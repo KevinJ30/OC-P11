@@ -88,6 +88,9 @@ class Carrousel extends React.Component {
                     direction: LEFT
                 });
                 break;
+
+            default:
+                break;
         }
     }
 

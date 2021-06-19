@@ -7,22 +7,22 @@ class Vendor extends React.Component {
         super(props);
 
         if(props.firstname === undefined) {
-            const err = "The component doesn\'t contain firstname property";
+            const err = "The component doesn't contain firstname property";
             throw err;
         }
 
         if(props.lastname === undefined) {
-            const err = "The component doesn\'t contain lastname property";
+            const err = "The component doesn't contain lastname property";
             throw err;
         }
 
         if(props.avatar_url === undefined) {
-            const err = "The component doesn\'t contain avatar_url property";
+            const err = "The component doesn't contain avatar_url property";
             throw err;
         }
 
         if(props.rating === undefined) {
-            const err = "The component doesn\'t contain rating property";
+            const err = "The component doesn't contain rating property";
             throw err;
         }
     }

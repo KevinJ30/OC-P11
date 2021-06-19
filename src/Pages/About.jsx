@@ -3,9 +3,6 @@ import Dropdown from '../Components/Dropdown/Dropdown';
 import Section from '../Components/Section/Section';
 
 class About extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     render() { 
         return (
             <React.Fragment>
