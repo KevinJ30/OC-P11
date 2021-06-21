@@ -89,14 +89,14 @@ class Dropdown extends React.Component {
     /**
      * Affcihe le composant dropdown
      * 
-     * @returns {HTMLElement|null} Composant dropdown 
+     * @returns {JSX.Element} Composant dropdown
      **/
     render() {
        if(this.title) {
             return <div className="dropdown">
                     <div className="dropdown__header">
                         <p className="dropdown__header-title">{this.title}</p>
-                        <button onClick={this.onButtonVisible}>
+                        <button aria-label="action_dropdown" onClick={this.onButtonVisible}>
                             { this.displayIcon() }
                         </button>
                     </div>

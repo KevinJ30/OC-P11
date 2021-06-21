@@ -29,7 +29,7 @@ class Home extends React.Component {
     
     render() { 
         return <div className="home">
-            <Section src="/medias/image_section.jpg" text="Chez vous, partout et ailleurs" />
+            <Section src="/medias/image_section.webp" text="Chez vous, partout et ailleurs" />
 
             <section className="home__gallery">
                 {
@@ -41,7 +41,7 @@ class Home extends React.Component {
                     this.state.dataIsLoaded && 
                     this.state.data.map(property => 
                         <React.Fragment key={property.id}>
-                            <Link to={"/property/" + property.id} className="home__thumb"><Thumb title={property.title} url_img={property.cover} /></Link>
+                            <Link to={"/property/" + property.id} className="home__thumb"><Thumb title={property.title} url_img={property.cover} aria-label={"Afficher un bien"} /></Link>
                         </React.Fragment>
                     )
                 }

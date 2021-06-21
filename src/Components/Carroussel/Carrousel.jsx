@@ -42,7 +42,7 @@ class Carrousel extends React.Component {
     }
 
     /**
-     * Évenement du bouton droit
+     * Événement du bouton droit
      * 
      * @param {Event} event
      **/
@@ -56,7 +56,7 @@ class Carrousel extends React.Component {
     }
 
     /**
-     * Évenement du bouton gauche
+     * Événement du bouton gauche
      * 
      * @param {Event} event
      **/
@@ -70,7 +70,7 @@ class Carrousel extends React.Component {
     }
 
     /**
-     * Évenement du clavier
+     * Événement du clavier
      * 
      * @param {Event} event 
      **/
@@ -107,7 +107,7 @@ class Carrousel extends React.Component {
                 </div>
 
                 <div className="carrousel__actions">
-                    <button className="carrousel__btn carrousel__btn-left" onClick={this.handleLeft}>
+                    <button className="carrousel__btn carrousel__btn-left" onClick={this.handleLeft} aria-label={"Tourner a gauche"}>
                         <span className="icon">
                             <svg viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -117,7 +117,7 @@ class Carrousel extends React.Component {
                         </span>
                     </button>
 
-                    <button className="carrousel__btn carrousel__btn-right" onClick={this.handleRight}>
+                    <button className="carrousel__btn carrousel__btn-right" onClick={this.handleRight} aria-label={"Tourner a droite"}>
                         <span className="icon">
                             <svg viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path

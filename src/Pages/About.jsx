@@ -12,6 +12,7 @@ class About extends React.Component {
                     </div>
                     
                     <div className="about__container">
+                        <h1>Nous découvrir</h1>
                         <Dropdown title="Fiabilité">
                            <p>Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.</p> 
                         </Dropdown>
