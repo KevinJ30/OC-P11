@@ -6,7 +6,7 @@ import Thumb from '../Components/Thumb/Thumb';
 class Home extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
             dataIsLoaded: false,
             data: []
@@ -18,7 +18,7 @@ class Home extends React.Component {
         fetch('/logements.json')
             .then(response => response.json())
             .then((data) => {
-                
+
                 this.setState({
                     dataIsLoaded: true,
                     data: data
@@ -26,20 +26,20 @@ class Home extends React.Component {
 
             });
     }
-    
-    render() { 
+
+    render() {
         return <div className="home">
             <Section src="/medias/image_section.jpg" text="Chez vous, partout et ailleurs" />
 
             <section className="home__gallery">
                 {
-                    !this.state.dataIsLoaded && 
+                    !this.state.dataIsLoaded &&
                     <span className="home__loading_data">Chargement en cours...</span>
                 }
 
                 {
-                    this.state.dataIsLoaded && 
-                    this.state.data.map(property => 
+                    this.state.dataIsLoaded &&
+                    this.state.data.map(property =>
                         <React.Fragment key={property.id}>
                             <Link to={"/property/" + property.id} className="home__thumb"><Thumb title={property.title} url_img={property.cover} /></Link>
                         </React.Fragment>
@@ -49,5 +49,5 @@ class Home extends React.Component {
         </div>;
     }
 }
- 
+
 export default Home;
