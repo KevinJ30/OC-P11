@@ -15,15 +15,13 @@ class Home extends React.Component {
 
     // Chargement des données depuis un fichier JSON
     componentDidMount() {
-        fetch('/logements.json')
+        fetch('./logements.json')
             .then(response => response.json())
             .then((data) => {
-
                 this.setState({
                     dataIsLoaded: true,
                     data: data
                 });
-
             });
     }
 

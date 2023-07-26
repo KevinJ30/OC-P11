@@ -18,7 +18,7 @@ class Property extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/logements.json')
+        fetch('../logements.json')
             .then(response => response.json())
             .then((data) => {
                 const property = data.filter(property => property.id === this.props.match.params.id)
@@ -29,12 +29,12 @@ class Property extends React.Component {
             })
     }
 
-    render() { 
-        if(this.state.dataIsLoaded) {
+    render() {
+        if (this.state.dataIsLoaded) {
             const fullname = this.state.data.host.name.split(' ');
             let list_equipements = [];
             this.state.data.equipments.forEach(item => {
-                list_equipements.push({text: item});
+                list_equipements.push({ text: item });
             })
 
             return (
@@ -43,28 +43,28 @@ class Property extends React.Component {
                         <Carrousel>
                             {this.state.data.pictures.map((picture, i) => {
                                 return <CarrouselImage key={i} src={picture} alt={i} />
-                            } )}
+                            })}
                         </Carrousel>
                     </div>
-    
+
                     <div className="property__header">
                         <div className="property__title">
                             <h1>{this.state.data.title}</h1>
                             <p>{this.state.data.location}</p>
-                           
+
                             <div className="property__tags">
                                 {this.state.data.tags.map((tag, i) => <Tag key={i} name={tag} />)}
                             </div>
                         </div>
 
                         <div className="property__vendor">
-                            <Vendor firstname={fullname[0]} lastname={fullname[1]} avatar_url={this.state.data.host.picture} rating={parseInt(this.state.data.rating)} />                        
+                            <Vendor firstname={fullname[0]} lastname={fullname[1]} avatar_url={this.state.data.host.picture} rating={parseInt(this.state.data.rating)} />
                         </div>
                     </div>
-    
+
                     <div className="property__informations">
                         <Dropdown title="Description">
-                           <p>{this.state.data.description}</p> 
+                            <p>{this.state.data.description}</p>
                         </Dropdown>
                         <Dropdown title="Équipements">
                             <List elements={list_equipements} />
@@ -77,5 +77,5 @@ class Property extends React.Component {
         return null;
     }
 }
- 
+
 export default Property;
