@@ -2,12 +2,13 @@ $icon-size: 30px;
 $icon-size-mobile: 18px;
 
 .icon {
-    width: $icon-size; height:$icon-size;
-    color:#000;
+    width: $icon-size;
+    height: $icon-size;
+    color: #000;
 }
 
 .icon-arrow-down {
-    transform:rotateX(180deg);
+    transform: rotateX(180deg);
 }
 
 .icon-stars {
@@ -15,9 +16,12 @@ $icon-size-mobile: 18px;
 }
 
 .icon-stars.active {
-    color:#FF6060;
+    color: #FF6060;
 }
 
-@media screen and(max-width:375px) {
-    .icon { width: $icon-size-mobile; height:$icon-size-mobile }
+@media screen and (max-width:375px) {
+    .icon {
+        width: $icon-size-mobile;
+        height: $icon-size-mobile
+    }
 }
